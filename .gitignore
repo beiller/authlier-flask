@@ -1,0 +1,15 @@
+# .gitignore
+__pycache__
+*.pyc
+*.pyo
+dist/
+build/
+/authlier/__pycache__
+/authlier/*.py[co]
+/.mypy_cache/
+/.pytest_cache/
+/coverage.*
+/typing*
+/nbformat
+/authlier_flask.egg-info/
+venv
