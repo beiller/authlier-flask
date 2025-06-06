@@ -1,6 +1,6 @@
 from flask import Flask, render_template_string, request, make_response, redirect
 
-from authlier import AuthlierException, AuthlierManager, authlier_required, current_user, register, login
+from authlier import AuthlierException, AuthlierManager, authlier_required, current_user, register, login, forgot_password
 
 import os
 
@@ -96,37 +96,12 @@ def create_app():
         resp = make_response(redirect("/"))
         resp.delete_cookie(SESSION_COOKIE_NAME)
         return resp
-    #     try:
-    #         jwt.logout(user_lookup_loader(get_token()))
-    #         response = {"message": "Logged out successfully."}
-    #         return jsonify(response)
-    #     except Exception as e:
-    #         return f"An error occurred: {str(e)}", 500
 
-    # @app.route('/forgot_password', methods=['POST'])
-    # def forgot_password():
-    #     data = request.json
-    #     try:
-    #         jwt.forgot_password(data['email'])
-    #         response = {"message": "Password reset email sent successfully."}
-    #         return jsonify(response)
-    #     except AuthlierException as e:
-    #         return str(e), 400
-
-    # @app.route('/profile')
-    # def profile():
-    #     if current_user is not None and isinstance(current_user, TClass):
-    #         user_id = getattr(current_user, "id", None)
-    #         username = data['username']
-    #         email = data.get('email', "")
-    #         return render_template_string(
-    #             'Your ID: {{ id }}, Username: {{ username }}, Email: {{ email }}',
-    #             id=user_id,
-    #             username=username,
-    #             email=email
-    #         )
-    #     else:
-    #         return "Please log in."
+    # You can also use a forgot password flow like so
+    @app.route('/forgot_password', methods=['POST'])
+    def submit_forgot_password():
+         forgot_password(request.form.get('email'))
+         return "Success"
 
     return app
 
