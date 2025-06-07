@@ -1,6 +1,6 @@
 from flask import Flask, render_template_string, request, make_response, redirect
 
-from authlier import AuthlierException, AuthlierManager, authlier_required, current_user, register, login, forgot_password
+from authlier_flask import AuthlierException, AuthlierManager, authlier_required, current_user, register, login, forgot_password
 
 import os
 
