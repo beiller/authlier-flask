@@ -34,7 +34,7 @@ authlier-flask
 
    ```python
    from flask import Flask, redirect, url_for
-   from authlier import AuthlierManager, authlier_required
+   from authlier_flask import AuthlierManager, authlier_required
 
    app = Flask(__name__)
 
@@ -59,7 +59,7 @@ authlier-flask
    Use the `register` function to create new users in your system.
 
    ```python
-   from authlier import register
+   from authlier_flask import register
 
    # Create a user with username, email, phone number.
    def on_new_user():
@@ -95,7 +95,7 @@ authlier-flask
    Use the `logout` function to end a user's session.
 
    ```python
-   from authlier import logout
+   from authlier_flask import logout
    
    # Log out the current user.
    def on_logout():
