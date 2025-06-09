@@ -26,6 +26,20 @@ flask>2.0
 authlier-flask
 ```
 
+## Setup
+
+Sign up for an account at https://authlier.com
+
+### Create Account
+
+https://authlier.com/register.html
+
+### Create a "Site"
+
+Give the site a name and domain name at https://authlier.com/sites.html
+
+When you create the site, an email will be sent with your API key / secret. Ensure to keep these safe! Use environment variables in your application as is shown throughout and ensure you don't commit these keys to your code repo!
+
 ## Usage
 
 1. **Initialize Authlier Manager in Your Flask App:**
